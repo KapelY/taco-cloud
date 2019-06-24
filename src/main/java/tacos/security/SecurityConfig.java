@@ -52,6 +52,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .and()
         .formLogin()
           .loginPage("/login")
+            .usernameParameter("user")//awesome change username to this name on login page
+            .passwordParameter("pwd")//awesome change password to this custom name on login page
         //end::customLoginPage[]
           
       // tag::enableLogout[]
