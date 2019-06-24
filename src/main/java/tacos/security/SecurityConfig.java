@@ -1,6 +1,7 @@
 //tag::securityConfigOuterClass[]
 package tacos.security;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 //end::securityConfigOuterClass[]
 //tag::baseBonesImports[]
@@ -30,7 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //end::securityConfigOuterClass[]
 
 //tag::customUserDetailsService[]
-  @Autowired
+@Qualifier("userRepositoryUserDetailsService")
+@Autowired
   private UserDetailsService userDetailsService;
   
 //end::customUserDetailsService[]
